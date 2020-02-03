@@ -4,7 +4,7 @@
 This project provides a command line interface for analyzing U.S. bikeshare data.
 
 ### Usage:
-python bikeshare.py
+python bikeshare.py (Note: requires python3)
 
 ### Credits:
 These links were referenced in the creation of this project:
