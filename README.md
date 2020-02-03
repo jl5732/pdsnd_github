@@ -7,7 +7,7 @@ This project provides a command line interface for analyzing U.S. bikeshare data
 python bikeshare.py (Note: requires python3)
 
 ### Credits:
-These links were referenced in the creation of this project:
+These resources were referenced in the creation of this project:
 
 https://docs.python.org/3/library/sys.html
 
