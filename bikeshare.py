@@ -5,9 +5,9 @@ import calendar as cal
 import sys
 from termcolor import colored,cprint
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = { 'chicago': 'data/chicago.csv',
+              'new york city': 'data/new_york_city.csv',
+              'washington': 'data/washington.csv' }
 
 # Pluck city names out of CITY_DATA
 city_data_str = ', '.join([str(elem) for elem in CITY_DATA.keys()])  
@@ -221,17 +221,14 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
         buffer_data(df)
-
-        try:
-            restart = input('\nWould you like to restart? Enter yes or no.\n\n-->')
-            if restart.lower() == 'no':
-                sys.exit(print_red('Program complete...exiting'))
+        restart = input('\nWould you like to restart? Enter yes or no.\n\n-->')
+        if restart.lower() == 'no':
+            sys.exit(print_red('Program complete...exiting'))       
 
 if __name__ == "__main__":
 	main()
