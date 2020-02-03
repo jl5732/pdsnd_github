@@ -217,6 +217,8 @@ def buffer_data(df):
             print_red('No raw data chosen.')
             break
 
+# Main function to collate and execute other defined functions
+
 def main():
     while True:
         city, month, day = get_filters()
