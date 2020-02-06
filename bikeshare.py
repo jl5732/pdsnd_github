@@ -5,9 +5,9 @@ import calendar as cal
 import sys
 from termcolor import colored,cprint
 
-CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+CITY_DATA = { 'chicago': 'data/chicago.csv',
+              'new york city': 'data/new_york_city.csv',
+              'washington': 'data/washington.csv' }
 
 # Pluck city names out of CITY_DATA
 city_data_str = ', '.join([str(elem) for elem in CITY_DATA.keys()])  
@@ -198,7 +198,7 @@ def buffer_data(df):
                 row_count = 0
                 while True:
                     try:
-                        for row in range(row_count, len(df.index)):
+                        for _ in range(row_count, len(df.index)):
                             print_green('-'*40)
                             print('\n', df.iloc[row_count:row_count+5].to_string(justify='left', na_rep=''), '\n')
                             row_count += 5
@@ -227,11 +227,9 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         buffer_data(df)
-
-        try:
-            restart = input('\nWould you like to restart? Enter yes or no.\n\n-->')
-            if restart.lower() == 'no':
-                sys.exit(print_red('Program complete...exiting'))
+        restart = input('\nWould you like to restart? Enter yes or no.\n\n-->')
+        if restart.lower() == 'no':
+            sys.exit(print_red('Program complete...exiting'))
 
 if __name__ == "__main__":
 	main()
