@@ -22,7 +22,6 @@ print_green = lambda x: cprint(x, 'green')
 print_red = lambda x: cprint(x, 'red')
 print_yellow = lambda x: cprint(x, 'yellow')
 
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -121,7 +120,6 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print_yellow('-'*40)
 
-
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -141,7 +139,6 @@ def station_stats(df):
     print_green('-'*40)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print_yellow('-'*40)
-
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -198,7 +195,7 @@ def buffer_data(df):
                 row_count = 0
                 while True:
                     try:
-                        for row in range(row_count, len(df.index)):
+                        for _ in range(row_count, len(df.index)):
                             print_green('-'*40)
                             print('\n', df.iloc[row_count:row_count+5].to_string(justify='left', na_rep=''), '\n')
                             row_count += 5
